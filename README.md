@@ -8,6 +8,10 @@ Should work with most Amazon domains, if you are presented with any problem, con
 
 VERSION HISTORY
 ===============
+1.5.1 - 2015.11.12
+------------------
+- Name change: "Blocker" to "Lock" so it describes better the function of the extension. 
+
 1.5 - 2015.11.01
 ----------------
 - Fixes some text from the options page.
