@@ -1,6 +1,6 @@
-#Amazon 1-Click Blocker
+#Amazon 1-Click Lock
 
-**Amazon 1-Click Blocker** does a couple of things:
+**Amazon 1-Click Lock** does a couple of things:
 - Protects the 1-Click button from product pages to prevent accidental clicks, now it requires two clicks.
 - Completely removes the 1-click buttons from product browsing pages, to buy anything it is necessary to go through the products page first.
 
@@ -40,8 +40,8 @@ VERSION HISTORY
 - Links to Goodreads page.
 
 ##LEGAL STUFF
-**Amazon 1-Click Blocker** by <a href="https://twitter.com/rub3nmv">**Rub&eacute;n Mart&iacute;nez**</a> is licensed as Apache 2.0.<br>
+**Amazon 1-Click Lock** by <a href="https://twitter.com/rub3nmv">**Rub&eacute;n Mart&iacute;nez**</a> is licensed as Apache 2.0.<br>
 For bugs report send me an email to
 rub3nmv@gmail.com
 or visit the github project page at 
-https://github.com/rubenmv/extension-amazon-one-click-blocker/
+https://github.com/rubenmv/extension-amazon-one-click-lock/
