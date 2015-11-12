@@ -1,0 +1,61 @@
+{
+  "manifest_version": 2,
+
+  "name": "Amazon 1-Click Blocker",
+  "short_name": "Amazon 1-Click Blocker",
+  "description": "Adds an extra step to the Amazon 1-Click to prevent accidental purchases",
+  "version": "1.5",
+
+  "permissions": [
+    "storage",
+    "*://*.amazon.com/*",
+    "*://*.amazon.es/*",
+    "*://*.amazon.in/*",
+    "*://*.amazon.co.jp/*",
+    "*://*.amazon.fr/*",
+    "*://*.amazon.de/*",
+    "*://*.amazon.it/*",
+    "*://*.amazon.nl/*",
+    "*://*.amazon.co.uk/*",
+    "*://*.amazon.ca/*",
+    "*://*.amazon.com.mx/*",
+    "*://*.amazon.com.au/*",
+    "*://*.amazon.com.br/*",
+    "*://*.goodreads.com/*"
+  ],
+
+
+  "icons": {
+    "128": "images/default-128.png",
+    "48": "images/default-48.png",
+    "24": "images/default-24.png"
+  },
+  "content_scripts": [{
+    "matches": [
+      "*://*.amazon.com/*",
+      "*://*.amazon.es/*",
+      "*://*.amazon.in/*",
+      "*://*.amazon.co.jp/*",
+      "*://*.amazon.fr/*",
+      "*://*.amazon.de/*",
+      "*://*.amazon.it/*",
+      "*://*.amazon.nl/*",
+      "*://*.amazon.co.uk/*",
+      "*://*.amazon.ca/*",
+      "*://*.amazon.com.mx/*",
+      "*://*.amazon.com.au/*",
+      "*://*.amazon.com.br/*"
+    ],
+    "css": [
+      "content.css"
+    ],
+    "js": [
+      "domready.js",
+      "content.js"
+    ]
+  }],
+  "options_page": "options.html",
+  "web_accessible_resources": [
+    "content.css"
+  ]
+}

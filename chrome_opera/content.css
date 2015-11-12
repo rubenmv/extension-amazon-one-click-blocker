@@ -1,0 +1,105 @@
+#one-click-blocker input {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+}
+
+.error {
+  display: block !important;
+  margin: 1em auto !important;
+	color: #fff !important;
+  background-color: #cc0101 !important;
+}
+
+.blocker {
+  cursor: pointer;
+    margin: 5px auto;
+    /*display: inline-block;*/
+    width: 95%;
+    text-align: center;
+    vertical-align: middle;
+    padding: 7px 11px;
+    border: 1px solid #989898;
+    border-radius: 3px;
+    background: #858585;
+    font: normal normal normal 16px arial;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.blocker:hover {
+    border: 1px solid #666666;
+    background: #a0a0a0;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.blocker:active {
+    background: #525252;
+    text-transform: uppercase;
+}
+
+/* Opened blocker, no button behaviour */
+.blocker-opened {
+    margin: 5px auto;
+    /*display: inline-block;*/
+    width: 95%;
+    text-align: center;
+    vertical-align: middle;
+    padding: 7px 11px;
+    border: 1px solid #989898;
+    border-radius: 3px;
+    background: #858585;
+    font: normal normal normal 16px arial;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.blocker-icon:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    margin: 0 8px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: url(data:image/png;base64,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) no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+
+
+.btn {
+  overflow: hidden !important;;
+  background: #3498db !important;;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9) !important;;
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9) !important;;
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9) !important;;
+  background-image: -o-linear-gradient(top, #3498db, #2980b9) !important;;
+  background-image: linear-gradient(to bottom, #3498db, #2980b9) !important;;
+  -webkit-border-radius: 3 !important;;
+  -moz-border-radius: 3 !important;;
+  border-radius: 3px !important;;
+  font-family: Arial !important;;
+  color: #ffffff !important;;
+  font-size: 16px !important;;
+  padding: 4px 8px 4px 8px !important;;
+  text-decoration: none !important;;
+}
+
+.btn:hover {
+  background: #3cb0fd !important;;
+  color: inherit !important;;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db) !important;;
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db) !important;;
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db) !important;;
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db) !important;;
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db) !important;;
+  text-decoration: none;
+}
+
+.btn:visited {
+  color: inherit !important;;
+}

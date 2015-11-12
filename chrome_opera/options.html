@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Amazon 1-Click Blocker Options</title>
+  <link rel="stylesheet" href="options.css" />
+  
+</head>
+
+<body>
+  <header>
+    <img src="images/default-48.png" alt="Logo" />&nbsp;&nbsp;&nbsp;
+    <h1>Amazon 1-Click Blocker</h1>
+  </header>
+  <div id="wrapper-main">
+    <!--Password limits-->
+    <h2>password lock</h2>
+    <div class="section">
+      <div class="controls">
+        <input type="text" maxlength="16" id="password" />
+        <span id="statusPassword" class="alert"></span>
+      </div>
+      <div class="help">
+        <span>Sets a word/phrase to unlock the 1-Click button.</span>
+        <br>
+        <span class="warning">Letters and numbers only.<br>Max. length is 16 characters.<br> Leave blank to disable.
+        </span>
+      </div>
+    </div>
+    <button id="save">Save</button>
+    <button id="reset">Reset</button>
+    <span id="statusSave" class="alert"></span>
+    <footer>
+      <h2>about the extension</h2>
+      <div>
+        <p>
+          <b>Amazon 1-Click Blocker</b> by <a href="https://twitter.com/rub3nmv"><b>Rub&eacute;n Mart&iacute;nez</b></a> is licensed
+          as <a href="http://www.gnu.org/licenses/gpl-3.0.txt">GPLv3</a>. You can find the <a href="https://github.com/rubenmv/chrome-extension-amazon-one-click-blocker">source code in GitHub</a>.
+        </p>
+      </div>
+    </footer>
+  </div>
+  <script src="options.js"></script>
+</body>
+
+</html>

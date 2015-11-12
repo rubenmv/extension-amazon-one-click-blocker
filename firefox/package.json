@@ -1,0 +1,25 @@
+{
+  "title": "Amazon 1-Click Blocker",
+  "name": "firefox-addon-amazon-one-click-blocker",
+  "version": "1.5.0",
+  "description": "Adds a second layer to Amazon's 1-Click to prevent accidental purchases",
+  "main": "index.js",
+  "author": "Ruben Martinez Vilar",
+  "homepage": "https://github.com/rubenmv/firefox-addon-amazon-one-click-blocker",
+  "icon": "resource://@firefox-addon-amazon-one-click-blocker/data/images/default-48.png",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "GPLv2",
+  "keywords": [
+    "jetpack"
+  ],
+  "preferences": [{
+        "name": "password",
+        "title": "Password",
+        "description": "Sets a word/phrase to unlock the 1-Click button.",
+        "type": "string",
+        "value": ""
+    }]
+}
