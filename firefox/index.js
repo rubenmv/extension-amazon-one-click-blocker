@@ -15,7 +15,3 @@ pageMod.PageMod({
   }
 });
 
-/*pf.on("password", function () {
-  //worker.port.emit("retrievePassword", prefs['password']);
-});*/
-
