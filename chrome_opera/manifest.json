@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
 
-  "name": "Amazon 1-Click Blocker",
-  "short_name": "Amazon 1-Click Blocker",
+  "name": "Amazon 1-Click Lock",
+  "short_name": "Amazon 1-Click Lock",
   "description": "Adds an extra step to the Amazon 1-Click to prevent accidental purchases",
-  "version": "1.5",
+  "version": "1.5.1",
 
   "permissions": [
     "storage",
