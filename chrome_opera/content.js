@@ -50,8 +50,11 @@ function onAccept() {
  */
 function onBlockerClick(e) {
   e.preventDefault();
+  
+  console.log("Button clicked, password = " + password.trim());
 
   blocker.removeEventListener("click", onBlockerClick);
+  console.log("Does blocker exists? " + document.getElementById("blocker-password"));
 
   if (password.trim() !== "" && !document.getElementById("blocker-password")) {
     // Password input
@@ -151,10 +154,10 @@ function lastPass() {
   // Set block password
   var options = {};
   options.password = "";
-  chrome.storage.sync.get({ password: "" }, function (items) {
+  chrome.storage.local.get({ password: "" }, function (items) {
     // Check for error
     if (chrome.runtime.lastError !== undefined) {
-      //console.error("An error ocurred restoring options: " + chrome.runtime.lastError);
+      console.error("An error ocurred restoring options: " + chrome.runtime.lastError);
       return;
     }
     // Get password

@@ -1,3 +1,7 @@
+1.5.2 - 2015.11.18
+------------------
+- Opera fix. Changed sync storage to local storage.
+
 1.5.1 - 2015.11.12
 ------------------
 - Name change: "Blocker" to "Lock" so it describes better the function of the extension. 
