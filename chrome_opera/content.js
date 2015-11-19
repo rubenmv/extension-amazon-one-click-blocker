@@ -1,3 +1,4 @@
+/*global DomReady*/
 // Sometimes DomReady won't trigger (Amazon messes up with it)
 // Keep track of the intervals and force stop after a while
 var intervals = 0;
@@ -50,12 +51,7 @@ function onAccept() {
  */
 function onBlockerClick(e) {
   e.preventDefault();
-  
-  console.log("Button clicked, password = " + password.trim());
-
   blocker.removeEventListener("click", onBlockerClick);
-  console.log("Does blocker exists? " + document.getElementById("blocker-password"));
-
   if (password.trim() !== "" && !document.getElementById("blocker-password")) {
     // Password input
     var input = document.createElement("input");

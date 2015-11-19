@@ -1,3 +1,7 @@
+1.5.3 - 2015.11.19
+------------------
+- Cleanup and some speed improvements.
+
 1.5.2 - 2015.11.18
 ------------------
 - Opera fix. Changed sync storage to local storage.
