@@ -50,7 +50,6 @@
       "content.css"
     ],
     "js": [
-      "domready.js",
       "content.js"
     ]
   }],
