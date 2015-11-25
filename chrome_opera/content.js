@@ -141,7 +141,6 @@ function lastPass() {
     form = document.getElementById("buyOneClick");
   }
   else if (ocbo) { // 1-click buy old style (amazon.es, etc.)
-    //ocbo.style.display = "none"; // Not hidden by 
     productBox = ocbo;
     form = document.getElementById("kicsBuyBoxForm");
   }

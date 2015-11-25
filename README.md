@@ -8,9 +8,12 @@ Should work with most Amazon domains, if you are presented with any problem, con
 
 VERSION HISTORY
 ===============
-1.5.1 - 2015.11.12
+
+1.5.1 - 2015.11.25
 ------------------
-- Name change: "Blocker" to "Lock" so it describes better the function of the extension. 
+- Name change: "Blocker" to "Lock" so it describes better the function of the extension.
+- Improves speed in which the blocker appears, now it won't wait for the page to finish loading.
+- Tested and working with multiprocess (Electrolysis).
 
 1.5 - 2015.11.01
 ----------------

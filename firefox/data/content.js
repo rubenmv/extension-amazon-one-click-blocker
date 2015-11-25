@@ -84,17 +84,25 @@ function onBlockerClick(e) {
   else {
     show1ClicButton();
   }
-  
+
   blocker.removeEventListener("click", onBlockerClick);
 }
 
 /**
  * Hide 1 click buttons
  */
-function seekAndHide() {
-  var oneClickButtons = document.querySelectorAll(".a-button-oneclick, .a-button-preorder");
+function seekAndDestroy() {
+  var oneClickButtons = document.querySelectorAll(".a-button-oneclick, .a-button-preorder, #buyButton");
   for (var i = 0; i < oneClickButtons.length; i++) {
     oneClickButtons[i].style.display = "none";
+  }
+  // Get one click button from products pages
+  ocb = document.getElementById("one-click-button");
+  ocp = document.getElementsByName("submit.preorder")[0]; // No id for preorder, great...
+  ocbo = document.getElementById("buyButton"); // one-click-button old style page
+  // If product page, create lock and finish
+  if (ocb || ocp || ocbo) {
+    lastPass();
   }
 }
 
@@ -103,51 +111,42 @@ function seekAndHide() {
  */
 function lastPass() {
   window.clearInterval(buttonChecker);
-  seekAndHide();
-  
-  // Get one click button (only in products page)
-  var ocb = document.getElementById("one-click-button"), // one-click-button
-    ocp = document.getElementsByName("submit.preorder")[0], // No id for preorder, great...
-    ocbo = document.getElementById("buyButton"); // one-click-button old style page
-  
-  if (ocb || ocp || ocbo) {
-    // Is product page, create lock box
-    blocker = document.createElement("div");
-    blocker.setAttribute("id", "one-click-blocker");
 
-    //var button = document.createElement("button");
-    blocker.setAttribute("class", "blocker blocker-icon");
-    blocker.innerHTML = "Unlock 1-Click";
-    blocker.addEventListener("click", onBlockerClick);
+  // Is product page, create lock box
+  blocker = document.createElement("div");
+  blocker.setAttribute("id", "one-click-blocker");
 
-    var form = null;
+  blocker.setAttribute("class", "blocker blocker-icon");
+  blocker.innerHTML = "Unlock 1-Click";
+  blocker.addEventListener("click", onBlockerClick);
+
+  var form = null;
      
-    // "Replace" the hidden 1-click button
-    if (ocb) { // 1-click buy
-      productBox = document.getElementsByClassName("a-button-oneclick")[0];
-      form = document.getElementById("buyOneClick");
-      if(!form) { // Really, Amazon? REALLY? one-click box inside #addToCart form????
-        form = document.getElementById("addToCart");
-      }
-    }
-    else if (ocp) { // 1-click peorder
-      productBox = document.getElementsByClassName("a-button-preorder")[0];
-      form = document.getElementById("buyOneClick");
-    }
-    else if (ocbo) { // 1-click buy old style (amazon.es, etc.)
-      ocbo.style.display = "none";
-      productBox = ocbo;
-      form = document.getElementById("kicsBuyBoxForm");
-    }
-    // Place bloquer outside form to prevent accidental submit on enter key
-    if (form) {
-      form.parentNode.insertBefore(blocker, form);
+  // "Replace" the hidden 1-click button
+  if (ocb) { // 1-click buy
+    productBox = document.getElementsByClassName("a-button-oneclick")[0];
+    form = document.getElementById("buyOneClick");
+    if (!form) { // Really, Amazon? REALLY? one-click box inside #addToCart form????
+      form = document.getElementById("addToCart");
     }
   }
-  
-  // Retrieve password
-  self.port.emit("loadPassword", "");
+  else if (ocp) { // 1-click peorder
+    productBox = document.getElementsByClassName("a-button-preorder")[0];
+    form = document.getElementById("buyOneClick");
+  }
+  else if (ocbo) { // 1-click buy old style (amazon.es, etc.)
+    productBox = ocbo;
+    form = document.getElementById("kicsBuyBoxForm");
+  }
+  // Place bloquer outside form to prevent accidental submit on enter key
+  if (form) {
+    form.parentNode.insertBefore(blocker, form);
+  }
 }
+  
+// Retrieve password
+self.port.emit("loadPassword", "");
+
 
 /**
  * Recieved password
@@ -162,16 +161,10 @@ self.port.on("retrievePassword", function (p) {
 var buttonChecker = window.setInterval(function () {
   intervals++;
   // Check for one click buttons on page and hide them
-  seekAndHide();
+  seekAndDestroy();
   // Force stop checker if DOMReady is not triggering
-  if (intervals > 10) {
-    lastPass();
+  if (intervals > 20) {
+    window.clearInterval(buttonChecker);
   }
 }, 500);
 
-/**
- * After loading page check if button was found or try once more
- */
-document.addEventListener("DOMContentLoaded", function () {
-  lastPass();
-});
