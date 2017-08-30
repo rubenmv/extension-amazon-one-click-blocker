@@ -31,8 +31,8 @@
 		chrome.storage.local.set(options, function () {
 			// Update status to let user know options were saved.
 			setInfoMessage("statusSave", "Options saved");
-			// Check for error
-			if (chrome.runtime.lastError !== undefined) {
+			// Check for error (chrome uses undefined, firefox uses null as default)
+			if (chrome.runtime.lastError !== undefined && chrome.runtime.lastError !== null) {
 				console.error("An error ocurred saving options: " + chrome.runtime.lastError.string);
 				console.error(chrome.runtime.lastError);
 				setInfoMessage("statusSave", "An error ocurred while saving.");
@@ -51,8 +51,8 @@
 			Get the items from localStorage
 				 ************* */
 		chrome.storage.local.get(options, function (items) {
-			// Check for error
-			if (chrome.runtime.lastError !== undefined) {
+			// Check for error (chrome uses undefined, firefox uses null as default)
+			if (chrome.runtime.lastError !== undefined && chrome.runtime.lastError !== null) {
 				console.error("An error ocurred restoring options: " + chrome.runtime.lastError);
 				return;
 			}

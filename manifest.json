@@ -4,7 +4,7 @@
   "name": "Amazon 1-Click Lock",
   "short_name": "Amazon 1-Click Lock",
   "description": "Adds an extra step to the Amazon 1-Click to prevent accidental purchases",
-  "version": "1.5.3",
+  "version": "1.6",
 
   "permissions": [
     "storage",
@@ -21,6 +21,19 @@
     "*://*.amazon.com.mx/*",
     "*://*.amazon.com.au/*",
     "*://*.amazon.com.br/*",
+    "*://smile.amazon.com/*",
+    "*://smile.amazon.es/*",
+    "*://smile.amazon.in/*",
+    "*://smile.amazon.co.jp/*",
+    "*://smile.amazon.fr/*",
+    "*://smile.amazon.de/*",
+    "*://smile.amazon.it/*",
+    "*://smile.amazon.nl/*",
+    "*://smile.amazon.co.uk/*",
+    "*://smile.amazon.ca/*",
+    "*://smile.amazon.com.mx/*",
+    "*://smile.amazon.com.au/*",
+    "*://smile.amazon.com.br/*",
     "*://*.goodreads.com/*"
   ],
 
@@ -44,7 +57,20 @@
       "*://*.amazon.ca/*",
       "*://*.amazon.com.mx/*",
       "*://*.amazon.com.au/*",
-      "*://*.amazon.com.br/*"
+      "*://*.amazon.com.br/*",
+      "*://smile.amazon.com/*",
+      "*://smile.amazon.es/*",
+      "*://smile.amazon.in/*",
+      "*://smile.amazon.co.jp/*",
+      "*://smile.amazon.fr/*",
+      "*://smile.amazon.de/*",
+      "*://smile.amazon.it/*",
+      "*://smile.amazon.nl/*",
+      "*://smile.amazon.co.uk/*",
+      "*://smile.amazon.ca/*",
+      "*://smile.amazon.com.mx/*",
+      "*://smile.amazon.com.au/*",
+      "*://smile.amazon.com.br/*"
     ],
     "css": [
       "content.css"
@@ -53,7 +79,7 @@
       "content.js"
     ]
   }],
-  "options_page": "options.html",
+  "options_ui": {"page": "options.html"},
   "web_accessible_resources": [
     "content.css"
   ]

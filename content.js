@@ -28,7 +28,7 @@ function show1ClicButton() {
  * Displays error on password incorrect
  */
 function onPasswordIncorrect() {
-  errorNode.textContent = "Password incorrect";
+  errorNode.textContent = "incorrect password";
   window.setTimeout(function () {
     errorNode.textContent = "";
 		}, 2000);
@@ -155,7 +155,7 @@ function lastPass() {
   options.password = "";
   chrome.storage.local.get({ password: "" }, function (items) {
     // Check for error
-    if (chrome.runtime.lastError !== undefined) {
+    if (chrome.runtime.lastError !== undefined && chrome.runtime.lastError !== null) {
       console.error("An error ocurred restoring options: " + chrome.runtime.lastError);
       return;
     }
