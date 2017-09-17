@@ -4,7 +4,7 @@
   "name": "Amazon 1-Click Lock",
   "short_name": "Amazon 1-Click Lock",
   "description": "Adds an extra step to the Amazon 1-Click to prevent accidental purchases",
-  "version": "1.6",
+  "version": "1.7",
 
   "permissions": [
     "storage",
@@ -79,8 +79,5 @@
       "content.js"
     ]
   }],
-  "options_ui": {"page": "options.html"},
-  "web_accessible_resources": [
-    "content.css"
-  ]
+  "options_ui": {"page": "options.html"}
 }

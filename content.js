@@ -31,7 +31,7 @@ function onPasswordIncorrect() {
   errorNode.textContent = "incorrect password";
   window.setTimeout(function () {
     errorNode.textContent = "";
-		}, 2000);
+  }, 2000);
 }
 
 /**
@@ -99,16 +99,21 @@ function onBlockerClick(e) {
  */
 function seekAndDestroy() {
   var oneClickButtons = document.querySelectorAll(".a-button-oneclick, .a-button-preorder, #buyButton");
-  for (var i = 0; i < oneClickButtons.length; i++) {
-    oneClickButtons[i].style.display = "none";
-  }
-  // Get one click button from products pages
-  ocb = document.getElementById("one-click-button");
-  ocp = document.getElementsByName("submit.preorder")[0]; // No id for preorder, great...
-  ocbo = document.getElementById("buyButton"); // one-click-button old style page
-  // If product page, create lock and finish
-  if (ocb || ocp || ocbo) {
-    lastPass();
+  if (oneClickButtons.length > 0) {
+    // Get one click button from products pages
+    ocb = document.getElementById("one-click-button") ||
+          document.getElementById("one-click-button-ubb") ||
+          document.getElementById("oneClickBuyButton");
+    ocp = document.getElementsByName("submit.preorder")[0]; // No id for preorder, great...
+    ocbo = document.getElementById("buyButton"); // one-click-button old style page
+    for (var i = 0; i < oneClickButtons.length; i++) {
+      oneClickButtons[i].style.display = "none";
+    }
+
+    // If product page, create lock and finish
+    if (ocb || ocp || ocbo) {
+      lastPass();
+    }
   }
 }
 
@@ -127,7 +132,7 @@ function lastPass() {
   blocker.addEventListener("click", onBlockerClick);
 
   var form = null;
-     
+
   // "Replace" the hidden 1-click button
   if (ocb) { // 1-click buy
     productBox = document.getElementsByClassName("a-button-oneclick")[0];
@@ -148,8 +153,8 @@ function lastPass() {
   if (form) {
     form.parentNode.insertBefore(blocker, form);
   }
-  
-  
+
+
   // Set block password
   var options = {};
   options.password = "";
@@ -172,7 +177,7 @@ var buttonChecker = window.setInterval(function () {
   // Check for one click buttons on page and hide them
   seekAndDestroy();
   // Just stop after a while
-  if (intervals > 20) {
+  if (intervals > 10) {
     window.clearInterval(buttonChecker);
   }
 }, 500);

@@ -9,6 +9,23 @@ Should work with most Amazon domains, if you are presented with any problem, con
 VERSION HISTORY
 ===============
 
+1.7 - 2017.09.17
+----------------
+- Fixes broken unlock box on spanish site.
+
+1.6 - 2017.08.30
+----------------
+- Added Amazon Smile to the list of supported domains.
+- Firefox: ported to Web Extensions model.
+
+1.5.3 - 2015.11.19
+------------------
+- Code cleanup, no DOMReady.js dependency and some speed improvements.
+
+1.5.2 - 2015.11.18
+------------------
+- Opera fix. Changed sync storage to local storage.
+
 1.5.1 - 2015.11.25
 ------------------
 - Name change: "Blocker" to "Lock" so it describes better the function of the extension.

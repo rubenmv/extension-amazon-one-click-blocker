@@ -1,3 +1,7 @@
+1.7 - 2017.09.17
+----------------
+- Fixes broken unlock box on spanish site.
+
 1.6 - 2017.08.30
 ----------------
 - Added Amazon Smile to the list of supported domains.
