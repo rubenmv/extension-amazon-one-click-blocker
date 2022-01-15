@@ -9,6 +9,10 @@ Should work with most Amazon domains, if you are presented with any problem, con
 VERSION HISTORY
 ===============
 
+1.8 - 2022.01.15
+----------------
+- Manifest V3.
+
 1.7 - 2017.09.17
 ----------------
 - Fixes broken unlock box on spanish site.
